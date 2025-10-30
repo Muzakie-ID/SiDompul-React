@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     }
 
     // Proxy request to the real API (keep this server as the only place that knows the remote IP)
-    const upstreamUrl = "http://13.212.220.132:8080/api/check-kuota";
+    const upstreamUrl = "https://sidompul.botdigital.web.id/api/check-kuota";
 
     const upstreamRes = await axios.post(
       upstreamUrl,

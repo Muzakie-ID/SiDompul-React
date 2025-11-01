@@ -146,11 +146,11 @@ function App() {
                   </p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600 mb-1">Tenure</p>
+                  <p className="text-sm text-gray-600 mb-1">Umur Kartu</p>
                   <p className="text-lg font-semibold text-gray-800">{result.tenure}</p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600 mb-1">Masa Aktif</p>
+                  <p className="text-sm text-gray-600 mb-1">Masa Aktif Kartu</p>
 
                   {getStatus() === "Aktif" ? (
                     <p className="text-lg font-semibold flex items-center gap-2 text-green-600">

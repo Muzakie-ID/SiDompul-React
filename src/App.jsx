@@ -155,7 +155,7 @@ function App() {
                   {getStatus() === "Aktif" ? (
                     <p className="text-lg font-semibold flex items-center gap-2 text-green-600">
                       <Calendar className="w-5 h-5" />
-                      {formatDate(result.expDate)}
+                      {formatDate(result.spExpDate)}
                     </p>
                   ) : (
                     <p className="text-lg font-semibold flex items-center gap-2 text-red-600">

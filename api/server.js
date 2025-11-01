@@ -2,6 +2,16 @@
 import axios from "axios";
 
 /**
+ * Basic Auth Token untuk upstream API
+ * Format: Base64 encoded "username:password"
+ * Contoh: "admin:gugun09" -> "YWRtaW46Z3VndW4wOQ=="
+ * 
+ * Set di environment variable UPSTREAM_AUTH_TOKEN
+ * atau langsung di sini untuk development
+ */
+const UPSTREAM_AUTH_TOKEN = process.env.UPSTREAM_AUTH_TOKEN || "YWRtaW46Z3VndW4wOQ==";
+
+/**
  * Helper baca body request (fallback jika req.body tidak tersedia)
  */
 async function readBody(req) {
@@ -52,13 +62,19 @@ export default async function handler(req, res) {
       return res.end(JSON.stringify({ statusCode: 400, message: "phone_number harus dikirim" }));
     }
 
-    // Proxy request to the real API (keep this server as the only place that knows the remote IP)
+    // Proxy request to the real API dengan Basic Auth
     const upstreamUrl = "https://sidompul.botdigital.web.id/api/check-kuota";
 
     const upstreamRes = await axios.post(
       upstreamUrl,
       { phone_number },
-      { headers: { "Content-Type": "application/json" }, timeout: 15000 }
+      { 
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Basic ${UPSTREAM_AUTH_TOKEN}`
+        }, 
+        timeout: 15000 
+      }
     );
 
     // Forward success response (status and body)

@@ -1,0 +1,47 @@
+{
+  "name": "Cek Kuota XL - SiDompul",
+  "short_name": "Cek Kuota XL",
+  "description": "Cek sisa kuota internet XL secara real-time. Pantau paket data, masa aktif kartu, dan status jaringan XL Anda dengan mudah.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/xl.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/xl.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "screenshots": [
+    {
+      "src": "/screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Cek Kuota XL Interface"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Cek Kuota",
+      "short_name": "Cek",
+      "description": "Langsung cek kuota XL Anda",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/xl.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
